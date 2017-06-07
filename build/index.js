@@ -62,6 +62,7 @@ function createIndexFile(indexPath, dev) {
  * Creates frontend application index file with development dependencies injected.
  */
 gulp.task('index', ['scripts', 'styles'], function() {
+  debugger;
   return createIndexFile(conf.paths.serve, true).pipe(browserSync.stream());
 });
 

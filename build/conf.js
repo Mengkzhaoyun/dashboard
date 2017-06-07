@@ -87,7 +87,7 @@ export default {
     /**
      * The name of the backend binary.
      */
-    binaryName: 'dashboard',
+    binaryName: 'dashboard.exe',
     /**
      * Name of the main backend package that is used in go build command.
      */
@@ -99,7 +99,7 @@ export default {
     /**
      * Address for the Kubernetes API server.
      */
-    apiServerHost: 'http://localhost:8080',
+    apiServerHost: 'http://cigpk.hopto.org:10281',
     /**
      * Env variable with address for the Kubernetes API server.
      */

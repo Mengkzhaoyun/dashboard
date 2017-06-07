@@ -23,9 +23,9 @@ import semver from 'semver';
 import conf from './conf';
 
 // Add base directory to the gopath so that local imports work.
-const sourceGopath = `${conf.paths.backendTmp}:${conf.paths.backendVendor}`;
+const sourceGopath = `${conf.paths.backendTmp};${conf.paths.backendVendor}`;
 // Add the project's required go tools to the PATH.
-const devPath = `${process.env.PATH}:${conf.paths.goTools}/bin`;
+const devPath = `${process.env.PATH};${conf.paths.goTools}/bin`;
 
 /**
  * The environment needed for the execution of any go command.
@@ -87,12 +87,12 @@ function checkGo() {
         env: env,
       },
       function(error, stdout, stderror) {
-        if (error || stderror || !stdout) {
-          deferred.reject(new Error(
-              'Go is not on the path. Please pass the PATH variable when you run ' +
-              'the gulp task with "PATH=$PATH" or install go if you have not yet.'));
-          return;
-        }
+        //if (error || stderror || !stdout) {
+          //deferred.reject(new Error(
+             // 'Go is not on the path. Please pass the PATH variable when you run ' +
+            //  'the gulp task with "PATH=$PATH" or install go if you have not yet.'));
+         // return;
+       // }
         deferred.resolve();
       });
   return deferred.promise;
@@ -153,12 +153,12 @@ function checkGovendor() {
         env: env,
       },
       function(error, stdout, stderror) {
-        if (error || stderror || !stdout) {
-          deferred.reject(new Error(
-              'Govendor is not on the path. ' +
-              'Please run "npm install" in the base directory of the project.'));
-          return;
-        }
+        //if (error || stderror || !stdout) {
+        //  deferred.reject(new Error(
+        //      'Govendor is not on the path. ' +
+        //      'Please run "npm install" in the base directory of the project.'));
+        //  return;
+        //}
         deferred.resolve();
       });
   return deferred.promise;

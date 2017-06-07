@@ -85,8 +85,5 @@
   },
   "engines": {
     "node": ">=4.2.2"
-  },
-  "scripts": {
-    "postinstall": "build/postinstall.sh"
   }
 }
